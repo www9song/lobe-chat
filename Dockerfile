@@ -4,7 +4,7 @@ FROM node:20-slim AS base
 ARG USE_CN_MIRROR
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="pk_test_dG91Z2gtZG9nLTk5LmNsZXJrLmFjY291bnRzLmRldiQ"
-ENV CLERK_SECRET_KEY="sk_test_yJ54aLOH8uK80ozNzeT1OIDIhSTsbzIKl1tT8liVKt"
+ENV NEXT_PUBLIC_SERVICE_MODE="server"
 RUN \
     # If you want to build docker in China, build with --build-arg USE_CN_MIRROR=true
     if [ "${USE_CN_MIRROR:-false}" = "true" ]; then \
